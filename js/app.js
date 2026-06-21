@@ -3,9 +3,11 @@ const FRAME_COUNT = 193;
 const FRAME_PATH = 'frames/frame_';
 const FRAME_EXT = '.webp';
 const IMAGE_SCALE = 0.86;
-const FRAME_SPEED = 2.0;
-const STATS_ENTER = 0.58;
-const STATS_LEAVE = 0.72;
+const FRAME_SPEED = 2.8;       // video completes by ~36% scroll
+const CANVAS_FADE_START = 0.37; // canvas starts fading after video is done
+const CANVAS_FADE_END = 0.45;   // canvas fully hidden by here
+const STATS_ENTER = 0.52;
+const STATS_LEAVE = 0.66;
 
 /* ─── ELEMENTS ─── */
 const loader = document.getElementById('loader');
@@ -148,8 +150,9 @@ function initHeroReveal() {
   gsap.from('.section-label', { opacity: 0, duration: 0.6, delay: 0.3, ease: 'power2.out' });
 }
 
-/* ─── HERO → CANVAS TRANSITION ─── */
+/* ─── HERO OVERLAY FADE + CANVAS HIDE ─── */
 function initHeroTransition() {
+  let canvasHidden = false;
   ScrollTrigger.create({
     trigger: scrollContainer,
     start: 'top top',
@@ -158,13 +161,27 @@ function initHeroTransition() {
     onUpdate: (self) => {
       const p = self.progress;
 
-      heroSection.style.opacity = Math.max(0, 1 - p * 18);
+      // hero overlay fades out as soon as scrolling starts
+      heroSection.style.opacity = Math.max(0, 1 - p * 14);
 
-      const wipeProgress = Math.min(1, Math.max(0, (p - 0.01) / 0.07));
-      const radius = wipeProgress * 80;
-      canvasWrap.style.clipPath = `circle(${radius}% at 50% 50%)`;
-
-      header.classList.toggle('on-dark', p > 0.05);
+      // canvas fades out once video animation is complete
+      if (p >= CANVAS_FADE_START) {
+        const fadeProgress = Math.min(1, (p - CANVAS_FADE_START) / (CANVAS_FADE_END - CANVAS_FADE_START));
+        canvasWrap.style.opacity = 1 - fadeProgress;
+        if (fadeProgress >= 1 && !canvasHidden) {
+          canvasWrap.classList.add('hidden');
+          canvasHidden = true;
+        } else if (fadeProgress < 1 && canvasHidden) {
+          canvasWrap.classList.remove('hidden');
+          canvasHidden = false;
+        }
+      } else {
+        canvasWrap.style.opacity = 1;
+        if (canvasHidden) {
+          canvasWrap.classList.remove('hidden');
+          canvasHidden = false;
+        }
+      }
     },
   });
 }
@@ -234,10 +251,10 @@ function initMarquee() {
     onUpdate: (self) => {
       const p = self.progress;
       let mOpacity = 0;
-      if (p > 0.08 && p < 0.55) {
-        mOpacity = Math.min(1, (p - 0.08) / 0.06);
-      } else if (p >= 0.55 && p < 0.62) {
-        mOpacity = Math.max(0, 1 - (p - 0.55) / 0.07);
+      if (p > 0.06 && p < 0.40) {
+        mOpacity = Math.min(1, (p - 0.06) / 0.05);
+      } else if (p >= 0.40 && p < 0.48) {
+        mOpacity = Math.max(0, 1 - (p - 0.40) / 0.08);
       }
       marqueeWrap.style.opacity = mOpacity;
     },

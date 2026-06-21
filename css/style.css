@@ -92,7 +92,7 @@ nav {
   font-size: 1.3rem;
   font-weight: 900;
   letter-spacing: 0.25em;
-  color: var(--text-on-light);
+  color: var(--text-on-dark);
   transition: color 0.3s;
 }
 
@@ -110,7 +110,7 @@ nav {
   font-weight: 500;
   text-decoration: none;
   letter-spacing: 0.05em;
-  color: var(--text-on-light);
+  color: var(--text-on-dark);
   transition: color 0.3s;
 }
 
@@ -129,15 +129,15 @@ nav {
 
 .nav-links .nav-cta:hover { background: var(--accent-dark); }
 
-/* ─── HERO ─── */
-.hero-standalone {
-  position: relative;
-  height: 100vh;
-  background: var(--bg-light);
+/* ─── HERO OVERLAY (sits on top of canvas) ─── */
+.hero-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   padding: 0 5vw;
-  z-index: 10;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -160,9 +160,10 @@ nav {
   font-weight: 900;
   line-height: 0.88;
   text-transform: uppercase;
-  color: var(--text-on-light);
+  color: var(--text-on-dark);
   letter-spacing: -0.01em;
   margin-bottom: 28px;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.5);
 }
 
 .hero-heading .accent { color: var(--accent); }
@@ -175,12 +176,12 @@ nav {
 .hero-tagline {
   font-size: 0.95rem;
   font-weight: 400;
-  color: #555;
+  color: rgba(240,240,238,0.7);
   letter-spacing: 0.05em;
 }
 
 .hero-scroll-indicator {
-  position: absolute;
+  position: fixed;
   bottom: 36px;
   left: 5vw;
   display: flex;
@@ -190,7 +191,9 @@ nav {
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #777;
+  color: rgba(240,240,238,0.5);
+  z-index: 11;
+  pointer-events: none;
 }
 
 /* ─── CANVAS ─── */
@@ -198,7 +201,12 @@ nav {
   position: fixed;
   inset: 0;
   z-index: 2;
-  clip-path: circle(0% at 50% 50%);
+  transition: opacity 0.6s ease;
+}
+
+.canvas-wrap.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 #canvas {
@@ -243,7 +251,7 @@ nav {
 /* ─── SCROLL CONTAINER ─── */
 #scroll-container {
   position: relative;
-  height: 900vh;
+  height: 620vh;
   z-index: 5;
   pointer-events: none;
 }
@@ -532,7 +540,7 @@ nav {
 
 /* ─── MOBILE ─── */
 @media (max-width: 768px) {
-  #scroll-container { height: 550vh; }
+  #scroll-container { height: 420vh; }
 
   .align-left,
   .align-right {

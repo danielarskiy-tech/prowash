@@ -32,8 +32,13 @@
     </nav>
   </header>
 
-  <!-- HERO (standalone 100vh) -->
-  <section class="hero-standalone" id="hero">
+  <!-- CANVAS (visible immediately) -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- HERO OVERLAY (on top of canvas, fades as you scroll) -->
+  <div class="hero-overlay" id="hero">
     <div class="hero-content">
       <span class="section-label">EST. 2018 · LICENSED & INSURED</span>
       <h1 class="hero-heading">
@@ -48,11 +53,6 @@
       <span>Scroll</span>
       <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><rect x="6" y="0" width="4" height="4" fill="currentColor" opacity="0.3"/><rect x="6" y="6" width="4" height="4" fill="currentColor" opacity="0.5"/><rect x="6" y="12" width="4" height="4" fill="currentColor" opacity="0.7"/><rect x="6" y="18" width="4" height="4" fill="currentColor"/></svg>
     </div>
-  </section>
-
-  <!-- CANVAS -->
-  <div class="canvas-wrap" id="canvas-wrap">
-    <canvas id="canvas"></canvas>
   </div>
 
   <!-- DARK OVERLAY -->
@@ -67,12 +67,12 @@
     </div>
   </div>
 
-  <!-- SCROLL CONTAINER — 900vh -->
+  <!-- SCROLL CONTAINER — 620vh -->
   <div id="scroll-container">
 
     <!-- SECTION 01: The Reveal -->
     <section class="scroll-section section-content align-left"
-             data-enter="18" data-leave="32" data-animation="slide-left">
+             data-enter="10" data-leave="24" data-animation="slide-left">
       <div class="section-inner">
         <span class="section-label">01 / THE RESULT</span>
         <h2 class="section-heading">Watch Dirt<br>Disappear<br>in Seconds.</h2>
@@ -82,7 +82,7 @@
 
     <!-- SECTION 02: Services -->
     <section class="scroll-section section-content align-right" id="services"
-             data-enter="32" data-leave="46" data-animation="slide-right">
+             data-enter="24" data-leave="38" data-animation="slide-right">
       <div class="section-inner">
         <span class="section-label">02 / SERVICES</span>
         <h2 class="section-heading">Every<br>Surface.<br>Every Job.</h2>
@@ -98,7 +98,7 @@
 
     <!-- SECTION 03: Why Us -->
     <section class="scroll-section section-content align-left" id="about"
-             data-enter="46" data-leave="58" data-animation="fade-up">
+             data-enter="38" data-leave="52" data-animation="fade-up">
       <div class="section-inner">
         <span class="section-label">03 / WHY PROWASH</span>
         <h2 class="section-heading">We Don't<br>Rinse.<br>We Restore.</h2>
@@ -109,7 +109,7 @@
 
     <!-- SECTION 04: Stats (dark overlay) -->
     <section class="scroll-section section-stats"
-             data-enter="58" data-leave="72" data-animation="stagger-up">
+             data-enter="52" data-leave="66" data-animation="stagger-up">
       <div class="stats-grid">
         <div class="stat">
           <span class="stat-number" data-value="500" data-decimals="0">0</span>
@@ -136,7 +136,7 @@
 
     <!-- SECTION 05: Process -->
     <section class="scroll-section section-content align-right"
-             data-enter="72" data-leave="84" data-animation="rotate-in">
+             data-enter="66" data-leave="78" data-animation="rotate-in">
       <div class="section-inner">
         <span class="section-label">04 / THE PROCESS</span>
         <h2 class="section-heading">Clean in<br>3 Simple<br>Steps.</h2>
@@ -150,7 +150,7 @@
 
     <!-- SECTION 06: CTA (persists) -->
     <section class="scroll-section section-cta" id="contact"
-             data-enter="84" data-leave="100" data-animation="scale-up" data-persist="true">
+             data-enter="78" data-leave="100" data-animation="scale-up" data-persist="true">
       <div class="cta-inner">
         <div class="cta-left">
           <span class="section-label">05 / GET STARTED</span>
