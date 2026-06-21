@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProWash — Premium Power Washing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <span class="loader-brand">PROWASH</span>
+    <div class="loader-bar-wrap">
+      <div id="loader-bar"></div>
+    </div>
+    <span id="loader-percent">0%</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav>
+      <span class="nav-logo">PROWASH</span>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO (standalone 100vh) -->
+  <section class="hero-standalone" id="hero">
+    <div class="hero-content">
+      <span class="section-label">EST. 2018 · LICENSED & INSURED</span>
+      <h1 class="hero-heading">
+        <span class="hero-word">POWER</span>
+        <span class="hero-word">WASHED</span>
+        <span class="hero-word accent">TO</span>
+        <span class="hero-word">PERFECTION.</span>
+      </h1>
+      <p class="hero-tagline">Residential &amp; Commercial · Serving the Greater Metro Area</p>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><rect x="6" y="0" width="4" height="4" fill="currentColor" opacity="0.3"/><rect x="6" y="6" width="4" height="4" fill="currentColor" opacity="0.5"/><rect x="6" y="12" width="4" height="4" fill="currentColor" opacity="0.7"/><rect x="6" y="18" width="4" height="4" fill="currentColor"/></svg>
+    </div>
+  </section>
+
+  <!-- CANVAS -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- DARK OVERLAY -->
+  <div id="dark-overlay"></div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" id="marquee-wrap" data-scroll-speed="-22">
+    <div class="marquee-text">
+      CLEAN &nbsp;·&nbsp; RESTORED &nbsp;·&nbsp; PRESSURE WASHED &nbsp;·&nbsp; TRANSFORMED &nbsp;·&nbsp;
+      CLEAN &nbsp;·&nbsp; RESTORED &nbsp;·&nbsp; PRESSURE WASHED &nbsp;·&nbsp; TRANSFORMED &nbsp;·&nbsp;
+      CLEAN &nbsp;·&nbsp; RESTORED &nbsp;·&nbsp; PRESSURE WASHED &nbsp;·&nbsp; TRANSFORMED &nbsp;·&nbsp;
+    </div>
+  </div>
+
+  <!-- SCROLL CONTAINER — 900vh -->
+  <div id="scroll-container">
+
+    <!-- SECTION 01: The Reveal -->
+    <section class="scroll-section section-content align-left"
+             data-enter="18" data-leave="32" data-animation="slide-left">
+      <div class="section-inner">
+        <span class="section-label">01 / THE RESULT</span>
+        <h2 class="section-heading">Watch Dirt<br>Disappear<br>in Seconds.</h2>
+        <p class="section-body">Years of grime, algae, and weathering removed in a single visit. We use commercial-grade equipment and eco-safe detergents to expose the surface underneath.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 02: Services -->
+    <section class="scroll-section section-content align-right" id="services"
+             data-enter="32" data-leave="46" data-animation="slide-right">
+      <div class="section-inner">
+        <span class="section-label">02 / SERVICES</span>
+        <h2 class="section-heading">Every<br>Surface.<br>Every Job.</h2>
+        <ul class="service-list">
+          <li>Driveways &amp; Sidewalks</li>
+          <li>House Exteriors &amp; Siding</li>
+          <li>Decks &amp; Patios</li>
+          <li>Fences &amp; Retaining Walls</li>
+          <li>Commercial Properties</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 03: Why Us -->
+    <section class="scroll-section section-content align-left" id="about"
+             data-enter="46" data-leave="58" data-animation="fade-up">
+      <div class="section-inner">
+        <span class="section-label">03 / WHY PROWASH</span>
+        <h2 class="section-heading">We Don't<br>Rinse.<br>We Restore.</h2>
+        <p class="section-body">Most services just blast water. We use the right pressure, temperature, and chemistry for each surface — protecting your property while delivering a deeper clean.</p>
+        <p class="section-note">Fully insured · Eco-friendly detergents · Satisfaction guaranteed</p>
+      </div>
+    </section>
+
+    <!-- SECTION 04: Stats (dark overlay) -->
+    <section class="scroll-section section-stats"
+             data-enter="58" data-leave="72" data-animation="stagger-up">
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-number" data-value="500" data-decimals="0">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Jobs Completed</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-value="4.9" data-decimals="1">0</span>
+          <span class="stat-suffix">★</span>
+          <span class="stat-label">Average Rating</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-value="100" data-decimals="0">0</span>
+          <span class="stat-suffix">%</span>
+          <span class="stat-label">Satisfaction Rate</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-value="7" data-decimals="0">0</span>
+          <span class="stat-suffix">yrs</span>
+          <span class="stat-label">In Business</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05: Process -->
+    <section class="scroll-section section-content align-right"
+             data-enter="72" data-leave="84" data-animation="rotate-in">
+      <div class="section-inner">
+        <span class="section-label">04 / THE PROCESS</span>
+        <h2 class="section-heading">Clean in<br>3 Simple<br>Steps.</h2>
+        <ol class="process-list">
+          <li><strong>Book Online</strong> — pick a time, get an instant quote</li>
+          <li><strong>We Show Up</strong> — on time, fully equipped, ready to work</li>
+          <li><strong>You're Amazed</strong> — results that speak for themselves</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SECTION 06: CTA (persists) -->
+    <section class="scroll-section section-cta" id="contact"
+             data-enter="84" data-leave="100" data-animation="scale-up" data-persist="true">
+      <div class="cta-inner">
+        <div class="cta-left">
+          <span class="section-label">05 / GET STARTED</span>
+          <h2 class="cta-heading">Ready for a<br>Spotless<br>Property?</h2>
+          <a href="tel:5552006927" class="cta-phone">(555) 200-WASH</a>
+          <p class="cta-subtext">Call for a free, no-obligation quote</p>
+        </div>
+        <div class="cta-right">
+          <form class="quote-form" onsubmit="return false;">
+            <h3 class="form-title">Get a Free Quote</h3>
+            <input type="text" placeholder="Your Name" required />
+            <input type="tel" placeholder="Phone Number" required />
+            <select required>
+              <option value="" disabled selected>Select a Service</option>
+              <option>Driveway / Sidewalk</option>
+              <option>House Exterior / Siding</option>
+              <option>Deck / Patio</option>
+              <option>Fence / Retaining Wall</option>
+              <option>Commercial Property</option>
+              <option>Other</option>
+            </select>
+            <button type="submit" class="cta-button">Send My Request →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /scroll-container -->
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
